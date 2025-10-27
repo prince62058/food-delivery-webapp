@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'http://localhost:4000'
+export const Url = process.env.REACT_APP_API_URL || 'http://localhost:4000'
