@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const Url = 'http://localhost:4000';
+  const Url = 'https://foodweb-backend-nopk.onrender.com';
 
   return (
     <div>
