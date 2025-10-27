@@ -1,7 +1,7 @@
 import { GenerateWebTokenAndSaveCookie } from "../JWT/Token.js";
 import { validateUser } from "../models/usermodel.js";
 import usermodel from '../models/usermodel.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const register = async (req, res) => {
     try {
