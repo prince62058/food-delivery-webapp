@@ -55,7 +55,7 @@ const Navbar = ({ setshowLogin }) => {
             <ul className='nav-profile-dropdown'>
               <li onClick={()=>navigate('/myorders')}><img src={assets.bag_icon} alt="" /> Orders</li>
               <hr />
-              <li onClick={() => window.open('http://localhost:5174', '_blank')}><img src={assets.profile_icon} alt="" /> Admin</li>
+              <li onClick={() => window.open('https://food-delivery-admin-5it0.onrender.com', '_blank')}><img src={assets.profile_icon} alt="" /> Admin</li>
               <hr />
               <li onClick={logout}><img src={assets.logout_icon} alt="" /> Logout</li>
 
