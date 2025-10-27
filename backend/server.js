@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ["http://localhost:5173", ,"https://food-delivery-admin-5it0.onrender.com","http://localhost:5174", "http://localhost:5175"], // React frontend and admin
+  origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ["http://localhost:5173","https://food-delivery-admin-5it0.onrender.com","http://localhost:5174", "http://localhost:5175"], // React frontend and admin
   credentials: true, // allow cookies
 }));
 
