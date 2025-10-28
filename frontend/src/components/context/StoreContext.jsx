@@ -11,6 +11,7 @@ const StoreContextProvider = (props) => {
   const [token , setToken] = useState("");
   const [food_list , setFood_list] = useState([]);
   const [ _id , setId] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const addToCart = async(itemId) => {
     if (!cartItems[itemId]) {
@@ -58,6 +59,7 @@ const loadCartData = async(token)=>{
 
 useEffect(() => {
   async function loadData() {
+    setLoading(true);
     await fetchFoodList();
 
     const storedToken = localStorage.getItem("token");
@@ -79,6 +81,7 @@ useEffect(() => {
       }
       await loadCartData(storedToken);
     }
+    setLoading(false);
   }
 
   loadData(); // call the async function
@@ -96,7 +99,8 @@ useEffect(() => {
     url,
     token,
     setToken,
-    _id
+    _id,
+    loading
   };
 
   return (
