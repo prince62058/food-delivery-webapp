@@ -7,6 +7,7 @@ import { connectDb } from './config/db.js';
 import useRouter from './routes/userRoute.js';
 import cartRouter from './routes/cartRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import { authMiddleware } from './middleware/authorize.js';
 
 const app = express();
 const port = process.env.PORT || 4000;

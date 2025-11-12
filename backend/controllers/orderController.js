@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing user order for frontend
 export const placeOrder = async (req, res) => {
-  const frontend_url = "https://food-del-frontend-e4u5.onrender.com";
+const frontend_url = "http://localhost:5173";
   try {
     const newOrder = new ordermodel({
       userId: req.body.userId,
@@ -18,7 +18,7 @@ export const placeOrder = async (req, res) => {
       paymentMethod: req.body.paymentMethod || "stripe",
     })
     await newOrder.save();
-    await usermodel.findByIdAndUpdate(req.body.userId, { cartData: {}, address: req.body.address });
+    await usermodel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
     if (req.body.paymentMethod === "cod") {
       res.json({ success: true, message: "Order placed successfully with Cash on Delivery" })

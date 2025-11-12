@@ -1,4 +1,5 @@
 import express from 'express';
+import { authMiddleware } from '../middleware/authorize.js';
 import { Login, register, getProfile, updateAddress, addAddress, getAddresses, deleteAddress, forgotPassword, resetPassword, googleLogin} from '../controllers/userController.js';
 
 const useRouter = express.Router();
@@ -11,8 +12,8 @@ useRouter.post('/forgot-password', forgotPassword);
 useRouter.post('/reset-password', resetPassword);
 useRouter.post('/profile', getProfile);
 useRouter.post('/update-address', updateAddress);
-useRouter.post('/add-address', addAddress);
-useRouter.post('/get-addresses', getAddresses);
-useRouter.post('/delete-address', deleteAddress);
+useRouter.post('/add-address', authMiddleware, addAddress);
+useRouter.post('/get-addresses', authMiddleware, getAddresses);
+useRouter.post('/delete-address', authMiddleware, deleteAddress);
 
 export default useRouter;
