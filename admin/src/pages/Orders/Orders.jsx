@@ -29,6 +29,18 @@ const Orders = ({Url}) => {
   }
  }
 
+ const removeOrder = async (orderId) => {
+  const response = await axios.post(`${Url}/api/order/remove`,{
+    orderId
+  })
+  if (response.data.success) {
+    toast.success(response.data.message);
+    await fetchAllOrders();
+  } else {
+    toast.error(response.data.message);
+  }
+ }
+
  useEffect(()=>{
   fetchAllOrders();
  },[])
@@ -65,6 +77,7 @@ const Orders = ({Url}) => {
                 <option value="Out for delivery">Out for delivery</option>
                 <option value="Delivered">Delivered</option>
               </select>
+              <button onClick={() => removeOrder(order._id)} className="remove-btn">Remove</button>
             </div>
           )
         })}

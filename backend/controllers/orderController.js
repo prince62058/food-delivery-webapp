@@ -129,3 +129,18 @@ export const cancelOrder = async(req,res)=>{
     res.json({success:false,message:"Error"})
   }
 }
+
+//Remove order (admin only)
+export const removeOrder = async(req,res)=>{
+  try{
+    const order = await ordermodel.findById(req.body.orderId);
+    if (!order) {
+      return res.json({success:false,message:"Order not found"})
+    }
+    await ordermodel.findByIdAndDelete(req.body.orderId);
+    res.json({success:true,message:"Order Removed"})
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"})
+  }
+}
