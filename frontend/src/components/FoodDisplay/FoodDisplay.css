@@ -1,0 +1,44 @@
+.food-display{
+    margin-top: 30px;
+}
+.food-display h2{
+    font-size: max(2vh, 24px);
+    font-weight: 600px;
+}
+.food-display-list{
+    display: grid ;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    margin-top: 30px;
+    gap:30px;
+    row-gap: 50px;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.spinner {
+    width: min(400px, 60vw);
+    height: min(400px, 60vw);
+    border: 20px solid tomato;
+    border-top: 20px solid tomato;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-spinner p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #FFA500;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

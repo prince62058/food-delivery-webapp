@@ -1,0 +1,77 @@
+.explore-menu {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.explore-menu h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.explore-menu-text {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Menu list layout */
+.explore-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Individual category item */
+.explore-menu-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.explore-menu-list-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Highlight when selected */
+.explore-menu-list-item img.active {
+  border: 3px solid #ff914d;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 145, 77, 0.4);
+}
+
+/* Text under images */
+.explore-menu-list-item p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.explore-menu-list-item:hover p {
+  color: #ff914d;
+}
+
+.explore-menu hr {
+  margin-top: 50px;
+  width: 80%;
+  height: 2px;
+  border: none;
+  background-color: #eee;
+  margin-left: auto;
+  margin-right: auto;
+}

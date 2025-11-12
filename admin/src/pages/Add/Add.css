@@ -1,0 +1,126 @@
+.add {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fafafa;
+  padding: 40px 20px;
+}
+
+.add form {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-img-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.add-img-upload p {
+  font-weight: 600;
+  color: #444;
+  margin: 0;
+}
+
+.img-box {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fits image without distortion */
+  transition: all 0.3s ease;
+}
+
+.img-box:hover {
+  border-color: #4caf50;
+  background: #f4fff4;
+}
+
+.add-product-name input,
+.add-product-description textarea,
+.add-category select,
+.add-price input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus,
+.add-category select:focus,
+.add-price input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+}
+
+.add-product-description textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.add-category-price {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.add-category,
+.add-price {
+  flex: 1;
+}
+
+.add-category p,
+.add-price p {
+  font-weight: 600;
+  color: #444;
+}
+
+button[type="submit"] {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #45a049;
+}
